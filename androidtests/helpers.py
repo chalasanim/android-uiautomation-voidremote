@@ -1,6 +1,12 @@
 import time, subprocess
 import xml.etree.ElementTree as ET
 
+PACKAGE = "com.pusun.pusunintelligence/"
+Activity = ".activity.SplashActivity"
+
+def launch_App(device, wait = 5):
+    device.shell(f"am start -n", {PACKAGE}/{Activity})
+
 def get_text(device,resource_id):
     device.shell("ui automator dump /sdcard/ui.xml")
     time.sleep(3)

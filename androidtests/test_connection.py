@@ -1,6 +1,6 @@
 from voidremote import VoidRemote
 import time, subprocess, xml.etree.ElementTree as ET
-from androidtests.helpers import get_text
+from androidtests.helpers import get_text, launch_App
 
 
 def test_connection_disconnected():
@@ -9,8 +9,7 @@ def test_connection_disconnected():
 
     device = client.devices().first()
 
-    device.shell("am start -n com.pusun.pusunintelligence/.activity.SplashActivity")
-    time.sleep(3)
+    launch_App(device)
 
     #dump the ui
 
