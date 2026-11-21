@@ -1,5 +1,6 @@
 from voidremote import VoidRemote
 import time, subprocess, xml.etree.ElementTree as ET
+from androidtests.helpers import get_text
 
 
 def test_connection_disconnected():
@@ -13,16 +14,7 @@ def test_connection_disconnected():
 
     #dump the ui
 
-    device.shell("ui automator dump /sdcard/ui.xml")
-    time.sleep(3)
-    subprocess.run(["adb", "pull", "/sdcard/ui.xml", "ui.xml"], check=True, capture_output=True)
-
-    tree = ET.parse("ui.xml")
-    status = None
-    for node in tree.getroot().iter("node"):
-        if node.get("resource-id") == "com.pusun.pusunintelligence:id/connect":
-            status = node.get("text")
-            break
+    status = get_text(device, "com.pusun.pusunintelligence:id/connect")
 
     print("Status:", status)
     assert status == "Disconnected"
