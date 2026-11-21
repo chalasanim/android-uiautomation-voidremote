@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+android-env/
+Androidenv/
+venv/
+.venv/
+
+# Environment / secrets
+.env
+*.env
+
+# Device automation output
+*.png
+ui.xml
+ui_copy.xml
+screen.png
+app_launched.png
+
+# VS Code
+.vscode/
+
+# OneDrive / OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
+
+# Unrelated files/folders in this workspace
+Python Basics Practice/
+gherkin/
+VRS.odp
