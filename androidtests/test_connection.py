@@ -1,5 +1,4 @@
 from voidremote import VoidRemote
-import time, subprocess, xml.etree.ElementTree as ET
 from androidtests.helpers import get_text, launch_App
 
 
